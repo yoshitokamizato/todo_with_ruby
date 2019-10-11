@@ -1,7 +1,16 @@
 module Dialog
 
+  def opening_todo_message
+    puts <<~EOS
+
+    【TODOリスト管理システム】
+    自分がやるべきことを管理し、圧倒的な生産性を手に入れましょう。
+
+    EOS
+  end
+
   # TODO もっとメソッド名良い感じに
-  def select_command
+  def select_command_message
     puts <<~EOS
 
     【タスク管理】
@@ -10,8 +19,11 @@ module Dialog
     登録 => 3
     更新 => 4
     削除 => 5
+    終了 => 6
 
     EOS
+
+    print "コマンド："
   end
 
   # TODO もっとメソッド名良い感じに

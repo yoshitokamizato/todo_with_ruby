@@ -45,8 +45,6 @@ class Todo
     # 選択されたタスク
     task = find_task_id(task_args)
 
-    binding.pry
-
     if tasks.size != 0
       task_details_message(task)
     else

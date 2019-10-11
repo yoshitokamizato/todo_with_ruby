@@ -1,36 +1,13 @@
 require "pry"
-require "./todo.rb"
 require "./dialog.rb"
+require "./tasks_controller.rb"
 
 class Main
   extend Dialog
+  extend Tasks_controller
 
-  @todo = Todo.new
+  opening_todo_message
 
-  INDEX = 1
-  SHOW = 2
-  CREATE = 3
-  UPDATE = 4
-  DELETE = 5
-
-  loop do
-    select_command
-
-    print "コマンド："
-    selected_num = gets.chomp.to_i
-
-    case selected_num
-    when INDEX
-      @todo.index
-    when SHOW
-      @todo.show
-    when CREATE
-      @todo.create
-    when UPDATE
-      @todo.update
-    when DELETE
-      @todo.delete
-    end
-  end
+  start_todo
 
 end
